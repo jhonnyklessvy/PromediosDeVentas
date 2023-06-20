@@ -7,5 +7,4 @@ La aplicación requerirá que el vendedor registre las ventas de chorizos realiz
 - No es necesario implementar un sistema de almacenamiento persistente para los datos.
 - No se requiere validación ni verificación de la calidad de los datos ingresados.
 
-![Texto alternativo](/"C:\Users\Jhony Almonacid\Desktop\taller en clase\PromediodeVentasChorizos ddf.png")
 
