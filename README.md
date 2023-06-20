@@ -1,5 +1,5 @@
 # Ejercicio Base:
-En tu labor como programador de software, has sido elegido para el desarrollo de una aplicación que se necesita para calcular el promedio de ventas de chorizos en una semana y el promedio total en un mes para un puesto de venta en un mercado. El objetivo es que el vendedor pueda tener un seguimiento de sus ventas y obtener información sobre el rendimiento de su negocio.
+En tu labor como programador de software, has sido elegido para el desarrollo de una aplicación para un administrador que lo necesita para calcular el promedio de ventas de chorizos en una semana y el promedio total en un mes para un puesto de venta en un mercado. El objetivo es que el administrador pueda tener un seguimiento de sus ventas y obtener información sobre el rendimiento de su negocio.
 
 La aplicación requerirá que el vendedor registre las ventas de chorizos realizadas en cada semana y calcule el promedio de ventas para esa semana en particular. Además, se calculará el promedio total de ventas de chorizos en el mes.
 ## Aclaraciones:
@@ -9,7 +9,8 @@ La aplicación requerirá que el vendedor registre las ventas de chorizos realiz
 
 # Caso de uso
 
-![UseCaseDiagram1](https://github.com/jhonnyklessvy/PromediosDeVentas/assets/89560229/44bab350-1b67-4897-9cd8-e604ec2380e0)
+![UseCaseDiagram2](https://github.com/jhonnyklessvy/PromediosDeVentas/assets/89560229/68f786bc-5e92-460f-ae53-1d624bc13775)
+
 
 # Diagrama de flujo
 
