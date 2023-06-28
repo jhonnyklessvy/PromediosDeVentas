@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=ClienteRegular
+comment1.params=id\ nombre\ telefono\ direccion
+comment1.target=ClienteRegular(int,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+numComments=2

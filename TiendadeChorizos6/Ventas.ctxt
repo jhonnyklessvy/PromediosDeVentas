@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Ventas
+comment1.params=scanner
+comment1.target=void\ registrarVentas(java.util.Scanner)
+comment2.params=
+comment2.target=void\ calcularPromedio()
+numComments=3
