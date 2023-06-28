@@ -9,7 +9,28 @@ La aplicación requerirá que el vendedor registre las ventas de chorizos realiz
 
 # Caso de uso
 
-![UseCaseDiagram2](https://github.com/jhonnyklessvy/PromediosDeVentas/assets/89560229/68f786bc-5e92-460f-ae53-1d624bc13775)
+![UseCaseDiagram2](https://github.com/jhonnyklessvy/PromediosDeVentas/assets/89560229/43b2673a-9ea8-44f9-98f4-e9a0350857cf)
+
+## Descripcion del caso de uso:
+
+
+Nombre: Calcular Promedio de Ventas Semanales en una Tienda de Chorizos
+
+Actores: Dueño de la tienda.
+
+Propósito: Calcular el promedio de ventas semanales en una tienda de chorizos y luego obtener el promedio total del mes.
+
+Curso Normal de Eventos:
+
+1. El Dueño de la tienda ingresa la cantidad de semanas en el mes.
+2. Para cada semana del mes:
+   - a. El Dueño de la tienda ingresa el número de ventas realizadas durante la semana.
+3. Se calcula el promedio de ventas semanales a partir de:
+(Suma de ventas de todas las semanas) / Cantidad de semanas
+4. Se muestra el promedio de ventas semanales en la tienda de chorizos.
+5. Se calcula el promedio total del mes a partir del promedio de ventas semanales obtenido en el paso anterior.
+6. Se muestra el promedio total de ventas del mes en la tienda de chorizos.
+7. Postcondiciones: Promedio de ventas semanales y promedio total del mes calculados.
 
 
 # Diagrama de flujo
