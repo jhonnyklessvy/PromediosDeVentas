@@ -1,15 +1,15 @@
 #BlueJ package file
-dependency1.from=Ventas
-dependency1.to=ClientePremium
+dependency1.from=Tienda
+dependency1.to=Ventas
 dependency1.type=UsesDependency
 dependency2.from=Ventas
 dependency2.to=ClienteVip
 dependency2.type=UsesDependency
 dependency3.from=Ventas
-dependency3.to=ClienteRegular
+dependency3.to=ClientePremium
 dependency3.type=UsesDependency
-dependency4.from=Tienda
-dependency4.to=Ventas
+dependency4.from=Ventas
+dependency4.to=ClienteRegular
 dependency4.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816

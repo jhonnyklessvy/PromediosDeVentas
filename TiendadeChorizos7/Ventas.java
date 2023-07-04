@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Ventas {
@@ -6,12 +8,12 @@ public class Ventas {
 
     private int semanasEnMes = 4; // Número de semanas en un mes
     private int totalSemanas = 0;
-    private ClienteVip[] clientes1 = null;
-    private ClientePremium[] clientes2 = null;
-    private ClienteRegular[] clientes3 = null;
-    private double[] ventasSemanales = null; // Arreglo para almacenar las ventas por semana
-    
-    public void RegistrarClientePremium(Scanner scanner){
+    private List<ClienteVip> clientes1 = null;
+    private List<ClientePremium> clientes2 = null;
+    private List<ClienteRegular> clientes3 = null;
+    private List<Double> ventasSemanales = null; // Lista para almacenar las ventas por semana
+
+    public void RegistrarClientePremium(Scanner scanner) {
         System.out.println("Digite cuántas semanas desea calcular (máximo 4 semanas):");
         totalSemanas = scanner.nextInt();
 
@@ -25,9 +27,9 @@ public class Ventas {
             System.out.println("Por favor, ingrese un número válido de semanas:");
             totalSemanas = scanner.nextInt();
         }
-        
-        clientes2 = new ClientePremium[totalSemanas + 1];
-        ventasSemanales = new double[totalSemanas + 1]; // Inicializar el arreglo de ventas semanales
+
+        clientes2 = new ArrayList<>();
+        ventasSemanales = new ArrayList<>();
 
         for (int semana = 1; semana <= totalSemanas; semana++) {
             double totalVentas = 0; // Reiniciar el total de ventas
@@ -45,8 +47,7 @@ public class Ventas {
                 sumaVentas += venta; // Agregar la venta a la suma total de la semana
             }
 
-            ventasSemanales[semana - 1] = sumaVentas; // Guardar la suma de ventas en el arreglo de ventas semanales
-            ventasSemanales[totalSemanas] = totalVentas; // Guardar la suma total de las ventas en la última posición del arreglo
+            ventasSemanales.add(sumaVentas); // Guardar la suma de ventas en la lista de ventas semanales
 
             System.out.println("Ingrese los datos del cliente:");
             System.out.println("ID:");
@@ -57,18 +58,13 @@ public class Ventas {
             String telefono = scanner.next();
             System.out.println("Dirección:");
             String direccion = scanner.next();
-            
+
             ClientePremium cliente2 = new ClientePremium(id, nombre, telefono, direccion);
-            cliente2.setId(id);
-            cliente2.setNombre(nombre);
-            cliente2.setTelefono(telefono);
-            cliente2.setDireccion(direccion);
-
-            clientes2[semana] = cliente2; // Agregar el cliente Premium al arreglo clientes2
+            clientes2.add(cliente2); // Agregar el cliente Premium a la lista de clientes2
+        }
     }
-}
-    
-    public void RegistrarClienteVip(Scanner scanner){
+
+    public void RegistrarClienteVip(Scanner scanner) {
         System.out.println("Digite cuántas semanas desea calcular (máximo 4 semanas):");
         totalSemanas = scanner.nextInt();
 
@@ -82,9 +78,9 @@ public class Ventas {
             System.out.println("Por favor, ingrese un número válido de semanas:");
             totalSemanas = scanner.nextInt();
         }
-        
-        clientes1 = new ClienteVip[totalSemanas + 1];
-        ventasSemanales = new double[totalSemanas + 1]; // Inicializar el arreglo de ventas semanales
+
+        clientes1 = new ArrayList<>();
+        ventasSemanales = new ArrayList<>();
 
         for (int semana = 1; semana <= totalSemanas; semana++) {
             double totalVentas = 0; // Reiniciar el total de ventas
@@ -102,8 +98,7 @@ public class Ventas {
                 sumaVentas += venta; // Agregar la venta a la suma total de la semana
             }
 
-            ventasSemanales[semana - 1] = sumaVentas; // Guardar la suma de ventas en el arreglo de ventas semanales
-            ventasSemanales[totalSemanas] = totalVentas; // Guardar la suma total de las ventas en la última posición del arreglo
+            ventasSemanales.add(sumaVentas); // Guardar la suma de ventas en la lista de ventas semanales
 
             System.out.println("Ingrese los datos del cliente:");
             System.out.println("ID:");
@@ -114,16 +109,11 @@ public class Ventas {
             String telefono = scanner.next();
             System.out.println("Dirección:");
             String direccion = scanner.next();
-            
-            ClienteVip cliente1 = new ClienteVip(id, nombre, telefono, direccion); // Crear una instancia de Cliente
-            cliente1.setId(id);
-            cliente1.setNombre(nombre);
-            cliente1.setTelefono(telefono);
-            cliente1.setDireccion(direccion);
 
-            clientes1[semana] = cliente1; // Agregar el cliente VIP al arreglo clientes1
+            ClienteVip cliente1 = new ClienteVip(id, nombre, telefono, direccion);
+            clientes1.add(cliente1); // Agregar el cliente VIP a la lista de clientes1
+        }
     }
-}
 
     public void registrarVentas(Scanner scanner) {
         System.out.println("Digite cuántas semanas desea calcular (máximo 4 semanas):");
@@ -140,8 +130,8 @@ public class Ventas {
             totalSemanas = scanner.nextInt();
         }
 
-        clientes3 = new ClienteRegular[totalSemanas + 1];
-        ventasSemanales = new double[totalSemanas + 1]; // Inicializar el arreglo de ventas semanales
+        clientes3 = new ArrayList<>();
+        ventasSemanales = new ArrayList<>();
 
         for (int semana = 1; semana <= totalSemanas; semana++) {
             double totalVentas = 0; // Reiniciar el total de ventas
@@ -159,8 +149,7 @@ public class Ventas {
                 sumaVentas += venta; // Agregar la venta a la suma total de la semana
             }
 
-            ventasSemanales[semana - 1] = sumaVentas; // Guardar la suma de ventas en el arreglo de ventas semanales
-            ventasSemanales[totalSemanas] = totalVentas; // Guardar la suma total de las ventas en la última posición del arreglo
+            ventasSemanales.add(sumaVentas); // Guardar la suma de ventas en la lista de ventas semanales
 
             System.out.println("Ingrese los datos del cliente:");
             System.out.println("ID:");
@@ -172,13 +161,8 @@ public class Ventas {
             System.out.println("Dirección:");
             String direccion = scanner.next();
 
-            ClienteRegular cliente3 = new ClienteRegular(id, nombre, telefono, direccion); // C
-            cliente3.setId(id);
-            cliente3.setNombre(nombre);
-            cliente3.setTelefono(telefono);
-            cliente3.setDireccion(direccion);
-
-            clientes3[semana] = cliente3; // Agregar el cliente Regular al arreglo clientes3
+            ClienteRegular cliente3 = new ClienteRegular(id, nombre, telefono, direccion);
+            clientes3.add(cliente3); // Agregar el cliente Regular a la lista de clientes3
         }
     }
 
@@ -188,29 +172,30 @@ public class Ventas {
         } else {
             System.out.println("----- PROMEDIO DE VENTAS -----");
             for (int semana = 1; semana <= totalSemanas; semana++) {
-                double sumaVentasSemana = ventasSemanales[semana - 1]; // Obtener la suma de ventas de la semana desde el arreglo ventasSemanales
-                double totalVentas = ventasSemanales[totalSemanas]; // Obtener la suma total de las ventas
-        
+                double sumaVentasSemana = ventasSemanales.get(semana - 1); // Obtener la suma de ventas de la semana desde la lista ventasSemanales
+                double totalVentas = ventasSemanales.get(totalSemanas); // Obtener la suma total de las ventas
+            
                 System.out.println("Semana " + semana + ":");
                 System.out.println("Ventas realizadas: " + totalVentas);
                 System.out.println("Pago total de ventas en la semana: " + sumaVentasSemana);
-        
+            
                 double promedioSemanal = sumaVentasSemana / totalVentas;
                 System.out.println("El promedio de ventas de la semana " + semana + " fue: " + promedioSemanal);
             }
-        
+            
             if (totalSemanas == semanasEnMes) {
                 double sumaTotalVentas = 0;
                 for (int i = 0; i < totalSemanas; i++) {
-                    sumaTotalVentas += ventasSemanales[i];
+                    sumaTotalVentas += ventasSemanales.get(i);
                 }
-                double totalVentasMes = ventasSemanales[totalSemanas]; // Obtener la suma total de las ventas del mes
-        
+                double totalVentasMes = ventasSemanales.get(totalSemanas); // Obtener la suma total de las ventas del mes
+            
                 double promedioTotal = sumaTotalVentas / totalVentasMes; // Calcular el promedio total dividiendo la suma total de ventas entre el total de ventas del mes
                 System.out.println("El promedio total del mes fue: " + promedioTotal);
-        
+            
                 System.out.println("Total de ventas en el mes: " + totalVentasMes);
             }
         }
     }
+
 }
