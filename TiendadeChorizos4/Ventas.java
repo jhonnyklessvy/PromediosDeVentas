@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Ventas {
 
     Scanner scanner = new Scanner(System.in);
@@ -70,23 +69,22 @@ public class Ventas {
         if (totalSemanas == 0) {
             System.out.println("Debe registrar las ventas por semana primero.");
         } else {
+            double sumaTotalVentas = 0;
+    
             System.out.println("----- PROMEDIO DE VENTAS -----");
             for (int semana = 1; semana <= totalSemanas; semana++) {
-                double sumaVentasSemana = ventasSemanales[semana - 1]; // Obtener la suma de ventas de la semana desde el arreglo ventasSemanales
-                double totalVentas = ventasSemanales[totalSemanas]; // Obtener la suma total de las ventas
-
+                double ventasSemana = ventasSemanales[semana - 1]; // Obtener las ventas de la semana desde el arreglo ventasSemanales
+    
                 System.out.println("Semana " + semana + ":");
-                System.out.println("Ventas realizadas: " + sumaVentasSemana);
-
-                double promedioSemanal = sumaVentasSemana / totalVentas;
-                System.out.println("El promedio de ventas de la semana " + semana + " fue: " + promedioSemanal);
+                System.out.println("Ventas realizadas: " + ventasSemanales[semana]); // Corregir aquí
+    
+                double promedioSemana = ventasSemana / ventasSemanales[semana]; // Calcular el promedio de ventas de la semana
+                System.out.println("El promedio de ventas fue: " + promedioSemana);
+    
+                sumaTotalVentas += ventasSemana; // Sumar las ventas de la semana a la suma total de ventas
             }
-
+    
             if (totalSemanas == semanasEnMes) {
-                double sumaTotalVentas = 0;
-                for (int i = 0; i < totalSemanas; i++) {
-                    sumaTotalVentas += ventasSemanales[i];
-                }
                 double promedioTotal = sumaTotalVentas / totalSemanas;
                 System.out.println("El promedio total del mes fue: " + promedioTotal);
             }

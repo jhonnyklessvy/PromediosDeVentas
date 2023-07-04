@@ -1,4 +1,4 @@
-public class ClientePremium {
+public class ClientePremium{
     private int id;
     private String nombre;
     private String telefono;

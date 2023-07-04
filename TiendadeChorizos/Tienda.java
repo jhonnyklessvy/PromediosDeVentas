@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class Tienda
-{
+public class Tienda {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int semanasEnMes = 4; // Número de semanas en un mes
@@ -10,6 +9,7 @@ public class Tienda
         double venta;
         double promedioSemanal;
         double promedioTotal;
+        int cantidadVentas = 0; // Contador de cantidad total de ventas
 
         System.out.println("Digite cuántas semanas desea calcular (máximo 4 semanas):");
         totalSemanas = scanner.nextInt();
@@ -36,15 +36,14 @@ public class Tienda
                 venta = scanner.nextDouble();
                 totalVentas += venta;
                 sumaVentas += venta; // Agregar la venta a la suma total de la semana
+                cantidadVentas++; // Incrementar la cantidad total de ventas
             }
 
             promedioSemanal = sumaVentas / ventasSemana;
             System.out.println("El promedio de ventas de la semana " + semana + " fue: " + promedioSemanal);
         }
 
-        if (totalSemanas == semanasEnMes) {
-            promedioTotal = totalVentas / (totalSemanas * semanasEnMes);
-            System.out.println("El promedio total del mes fue: " + promedioTotal);
-        }
+        promedioTotal = totalVentas / cantidadVentas;
+        System.out.println("El promedio total de ventas en el mes fue: " + promedioTotal);
     }
 }

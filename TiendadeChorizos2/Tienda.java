@@ -5,9 +5,8 @@ public class Tienda {
         Scanner scanner = new Scanner(System.in);
         int semanasEnMes = 4; // Número de semanas en un mes
         int totalSemanas = 0;
-        double totalVentas = 0;
-        double venta;
-        double promedioSemanal;
+        int totalVentas = 0; // Suma de todas las ventas del mes
+        int cantidadVentas = 0; // Cantidad total de ventas
         double promedioTotal;
 
         System.out.println("Digite cuántas semanas desea calcular (máximo 4 semanas):");
@@ -28,7 +27,7 @@ public class Tienda {
         Cliente[] clientes = new Cliente[totalSemanas];
 
         for (int semana = 1; semana <= totalSemanas; semana++) {
-            double sumaVentas = 0; // Suma de ventas para cada semana
+            int sumaVentas = 0; // Suma de ventas para cada semana
 
             System.out.println("Semana " + semana);
             System.out.println("Digite cuántas ventas de chorizos hizo en esta semana:");
@@ -48,30 +47,21 @@ public class Tienda {
 
             for (int i = 1; i <= ventasSemana; i++) {
                 System.out.println("Ingrese el valor de la venta:");
-                venta = scanner.nextDouble();
-                totalVentas += venta;
+                int venta = scanner.nextInt();
+                totalVentas += venta; // Agregar la venta a la suma total del mes
                 sumaVentas += venta; // Agregar la venta a la suma total de la semana
+                cantidadVentas++; // Incrementar la cantidad total de ventas
             }
 
-            promedioSemanal = sumaVentas / ventasSemana;
+            double promedioSemanal = sumaVentas / ventasSemana;
             System.out.println("El promedio de ventas de la semana " + semana + " fue: " + promedioSemanal);
 
             clientes[semana - 1] = cliente; // Agregar el cliente al arreglo
         }
 
         if (totalSemanas == semanasEnMes) {
-            promedioTotal = totalVentas / (totalSemanas * semanasEnMes);
+            promedioTotal = totalVentas / cantidadVentas;
             System.out.println("El promedio total del mes fue: " + promedioTotal);
-        }
-
-        // Imprimir la información de los clientes
-        System.out.println("Información de los clientes:");
-        for (Cliente cliente : clientes) {
-            System.out.println("ID: " + cliente.id);
-            System.out.println("Nombre: " + cliente.nombre);
-            System.out.println("Teléfono: " + cliente.telefono);
-            System.out.println("Dirección: " + cliente.direccion);
-            System.out.println("--------------------");
         }
     }
 }

@@ -1,16 +1,16 @@
-public class ClienteVip{
+public abstract class Cliente {
     private int id;
     private String nombre;
     private String telefono;
     private String direccion;
-
-    public ClienteVip(int id, String nombre, String telefono, String direccion) {
+    
+    public Cliente(int id, String nombre, String telefono, String direccion){
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
     }
-
+    
     public int getId() {
         return id;
     }

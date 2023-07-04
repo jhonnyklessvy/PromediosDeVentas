@@ -5,6 +5,7 @@ public class Tienda {
         Scanner scanner = new Scanner(System.in);
         int semanasEnMes = 4; // Número de semanas en un mes
         int totalSemanas = 0;
+        int cantidadVentas = 0; // Cantidad total de ventas
         double totalVentas = 0;
         double venta;
         double promedioSemanal;
@@ -51,6 +52,7 @@ public class Tienda {
                 venta = scanner.nextDouble();
                 totalVentas += venta;
                 sumaVentas += venta; // Agregar la venta a la suma total de la semana
+                cantidadVentas++; // Incrementar la cantidad total de ventas
             }
 
             promedioSemanal = sumaVentas / ventasSemana;
@@ -60,18 +62,8 @@ public class Tienda {
         }
 
         if (totalSemanas == semanasEnMes) {
-            promedioTotal = totalVentas / (totalSemanas * semanasEnMes);
+            promedioTotal = totalVentas / cantidadVentas;
             System.out.println("El promedio total del mes fue: " + promedioTotal);
-        }
-
-        // Imprimir la información de los clientes
-        System.out.println("Información de los clientes:");
-        for (Cliente cliente : clientes) {
-            System.out.println("ID: " + cliente.getId());
-            System.out.println("Nombre: " + cliente.getNombre());
-            System.out.println("Teléfono: " + cliente.getTelefono());
-            System.out.println("Dirección: " + cliente.getDireccion());
-            System.out.println("--------------------");
         }
     }
 }
